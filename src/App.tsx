@@ -6,7 +6,6 @@ import {
   Experience,
   Hero,
   Navbar,
-  Tech,
   Works,
   StarsCanvas,
 } from "./components";
