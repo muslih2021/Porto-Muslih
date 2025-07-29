@@ -246,7 +246,7 @@ const projects: TProject[] = [
       },
     ],
     image: rental,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://drive.google.com/drive/folders/1xPEXXU-nir53pAuptCrblWMk2PkNKs_h?usp=sharing",
   },
   {
     name: "InsightCart App",
@@ -321,7 +321,7 @@ const projects: TProject[] = [
       },
     ],
     image: citta,
-    sourceCodeLink: "https://himatikafmipaunhas.id/",
+    sourceCodeLink: "https://drive.google.com/drive/folders/1vr33aUexGXilB4MslbMDPqDDHqeQske-?usp=sharing",
   },
   {
     name: "Web Ratu Boga – a Local Culinary MSME",
@@ -346,7 +346,7 @@ const projects: TProject[] = [
       },
     ],
     image: ratu,
-    sourceCodeLink: "https://himatikafmipaunhas.id/",
+    sourceCodeLink: "https://drive.google.com/drive/folders/1b1dSH70YP3iS0evQMFCLRWLWz7XV-k3Y?usp=sharing",
   },
   {
     name: "Faculty of Pharmacy Information System (SI-FA)",
@@ -356,7 +356,7 @@ const projects: TProject[] = [
 
     ],
     image: sifa,
-    sourceCodeLink: "https://himatikafmipaunhas.id/",
+    sourceCodeLink: "https://sifa.unhas.ac.id/login",
   },
   {
     name: "Job Fair – Event Video",
