@@ -16,7 +16,11 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   sourceCodeLink,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div  
+      variants={fadeIn("up", "spring", index * 0.1, 0.35)}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.05 }} >
       <Tilt
         glareEnable
         tiltEnable
@@ -36,7 +40,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
             <h3 className="text-[24px] font-bold text-white">{name}</h3>
             <p className="text-secondary mt-2 text-[14px]">{description}</p>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-7">
             {tags.map((tag) => (
               <p key={tag.name} className={`text-[14px] ${tag.color}`}>
                 #{tag.name}
