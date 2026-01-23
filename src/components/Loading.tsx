@@ -34,14 +34,7 @@ const Loading = ({  onComplete }: LoadingProps) => {
     return () => clearTimeout(timer);
   }, [charIndex, greeting, onComplete]);
 
-  // Gradient animation
-  const containerVariants = {
-    initial: { opacity: 1 },
-    exit: {
-      opacity: 0,
-      transition: { duration: 0.8, delay: 1.2 },
-    },
-  };
+  
 
   // Glow effect
   const glowVariants = {

@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 import { styles } from "../../constants/styles";
-import { config } from "../../constants/config";
-import { letterVariant, fadeIn } from "../../utils/motion"; // sesuaikan path
+
+import {  fadeIn } from "../../utils/motion"; // sesuaikan path
 
 const Hero = () => {
   const texts = [
