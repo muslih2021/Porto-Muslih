@@ -34,6 +34,15 @@ import sifa from "./sifa.png";
 import job from "./job.png";
 import sampah from "./sampah.png";
 import awing from "./webawing.png";
+import trubers from "./trubers.jpg";
+import nakamura from "./nakamura.png";
+import pnm from "./pnm.png";
+import imedit from "./imedit.png";
+import wajo from "./wajo.jpg";
+import faceRecognition from "./faceRecognition.jpeg";
+
+
+
 
 export {
   logo,
@@ -62,11 +71,11 @@ export {
   tesla,
   rental,
   insight,
-  himatika,
+  himatika,trubers,
   citta,
   ratu,
   sifa,
   job,
   sampah,
-  awing
+  awing,pnm,imedit,wajo,faceRecognition,nakamura
 };

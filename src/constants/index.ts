@@ -32,7 +32,8 @@ import {
   sifa,
   job,
   sampah,
-  awing
+  awing,
+  trubers,pnm,imedit,wajo,faceRecognition,nakamura
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -194,13 +195,55 @@ const experiences: TExperience[] = [
     companyName: "Digital Village Platform & A-Wing Group",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
-    date: "2025 – Present",
+    date: "Mid 2025",
     points: [
       "Developing a digital village government platform to support rural communities in Maluku.",
       "Edited corporate and event videos using Adobe After Effects, focusing on brand-aligned visuals and professional animation for client promotion.",
       "Produced a cultural documentary on Citta Village (Soppeng, Central Maluku).",
     ],
   },
+ {
+  title: "Internship Experience – Full Stack Web Developer",
+  companyName: "Telkomsel Regional Sulawesi",
+  icon: placeholderIcon,
+  iconBg: "#E6DEDD",
+  date: "August 4, 2025 – December 5, 2025",
+  points: [
+    "Developed and maintained The Communal (thecommunal.id) as a digital community platform to support Telkomsel’s business expansion targeting youth and community segments through event collaboration, sponsorship programs, and community engagement initiatives across Sulawesi.",
+
+    "Developed Trubers Sulawesi, an internal web application to monitor Trust Builder social media performance, featuring automated scoring, leaderboard generation for incentive distribution, and public data scraping from TikTok and Instagram, built using ReactJS, ExpressJS, JavaScript, and cPanel, and deployed at trubers.id.",
+
+    "Built WAJO (WhatsApp Web Automation), a system integrated into The Communal platform to schedule messages, manage broadcasts, and automate WhatsApp communications, enabling communities to deliver messages efficiently without manual sending using React for frontend and ExpressJS for backend.",
+
+    "Developed a Face Recognition Gallery System within The Communal website that enables users to automatically find their photos from community event documentation using facial detection, while maintaining user privacy, implemented using Laravel for backend services and Python for facial processing in a two-person development team.",
+
+    "Developed an automated WhatsApp Chatbot integrated with WhatsApp Business API to support Direct Sales in handling customer inquiries regarding Telkomsel packages, particularly in high-traffic environments such as airports, with multi-user access and escalation to customer service when needed, built using JavaScript and ExpressJS.",
+
+    "Conducted data scraping and analysis of educational institutions in remote and underdeveloped (3T) areas across the Talaud Islands and Sangihe Islands, North Sulawesi, to support digital education expansion, internet coverage planning, and digital inclusion initiatives.",
+
+    "Collected, organized, and analyzed contact data and social media accounts of Student Executive Board (BEM) leaders across Sulawesi at both faculty and university levels to support campus activation strategies and strengthen Telkomsel’s brand presence among university students.",
+
+    "Participated in online MOM briefings for Direct Sales clusters in Makassar, New Banggai, Talaud, Parigi Moutong, and New Gorontalo, analyzing business performance insights, operational challenges, and IT-related pain points to identify opportunities for improving sales effectiveness and digital system support."
+  ],
+},
+{
+  title: "Video Editor Freelance",
+  companyName: "Nakamura Culinary School • PT Permodalan Nasional Madani (PNM) • Imare Imedit Japan • A Wing Group",
+  icon: placeholderIcon,
+  iconBg: "#E6DEDD",
+  date: "Late 2025 – Present",
+  points: [
+    "Edited promotional video content for Nakamura Culinary School to support business expansion into the Indonesian market, focusing on brand positioning, cultural relevance, and clear messaging to introduce the institution to a new international audience.",
+
+    "Produced and edited video content for PT Permodalan Nasional Madani (PNM) as part of a women empowerment program, highlighting the impact of entrepreneurship initiatives for housewives through storytelling that emphasizes social value and economic inclusion.",
+
+    "Collaborated with Imare Imedit Japan to edit promotional videos for AI-based therapeutic technology, presenting complex technological concepts through clear visuals, structured narratives, and professional motion graphics tailored for a global audience.",
+
+    "Edited business and investor-focused promotional videos for A Wing Group to support company expansion, delivering concise, persuasive, and visually polished content aimed at attracting potential investors and strategic partners."
+  ],
+}
+
+
 ];
 
 const testimonials: TTestimonial[] = [
@@ -388,6 +431,82 @@ const projects: TProject[] = [
     image: awing,
     sourceCodeLink: "https://www.aai-jp.com/blank-17",
   },
+  {
+  name: "Promotional Video – Nakamura Culinary School",
+  description:
+    "Edited a promotional video to support Nakamura Culinary School’s business expansion into the Indonesian market. The video introduces the institution’s culinary programs, values, and brand identity, with storytelling adapted for a new international audience using clean transitions and engaging motion graphics.",
+  tags: [
+    { name: "video-editing", color: "blue-text-gradient" },
+    { name: "brand-promotion", color: "green-text-gradient" },
+    { name: "international-expansion", color: "pink-text-gradient" },
+  ],
+  image: nakamura,
+  sourceCodeLink: "https://drive.google.com/drive/folders/1ZzsZYTM-ziEzotyPG_jbEs_hNKI35yic?usp=sharing",
+},{
+  name: "Empowerment Program Video – PT Permodalan Nasional Madani (PNM)",
+  description:
+    "Produced and edited video content for PT Permodalan Nasional Madani (PNM) as part of a women empowerment program for housewives. The video highlights entrepreneurial activities, social impact, and economic empowerment through emotional storytelling and informative visual composition.",
+  tags: [
+    { name: "video-editing", color: "blue-text-gradient" },
+    { name: "social-impact", color: "green-text-gradient" },
+    { name: "corporate-program", color: "pink-text-gradient" },
+  ],
+  image: pnm,
+  sourceCodeLink: "https://drive.google.com/drive/folders/1i1jdH_loh1s757eHVT0YU0FgABrXgUK7?usp=sharing",
+},{
+  name: "AI Therapy Technology Promotional Video – Imare Imedit Japan",
+  description:
+    "Edited a promotional video for AI-based therapeutic technology developed by Imare Imedit Japan. The video presents complex technology concepts in a clear and accessible way through structured storytelling, professional motion graphics, and visually clean animations for global audiences.",
+  tags: [
+    { name: "video-editing", color: "blue-text-gradient" },
+    { name: "ai-technology", color: "green-text-gradient" },
+    { name: "motion-graphics", color: "pink-text-gradient" },
+  ],
+  image: imedit,
+  sourceCodeLink: "https://drive.google.com/drive/folders/1V_ruzogZryuCHt19QcSYJqXsUc51qAQn?usp=sharing",
+},
+{
+  name: "Internal Social Media Analytics Web System – Trubers Sulawesi",
+  description:
+    "Developed Trubers Sulawesi, an internal web application used to monitor Trust Builder social media performance. The system includes automated scoring, leaderboard generation for incentive distribution, and public data scraping from TikTok and Instagram to track likes, comments, views, and posting metrics.",
+  tags: [
+    { name: "reactjs", color: "blue-text-gradient" },
+    { name: "expressjs", color: "green-text-gradient" },
+    { name: "data-scraping", color: "pink-text-gradient" },
+  ],
+  image: trubers,
+  sourceCodeLink: "https://trubers.id",
+},{
+  name: "WhatsApp Automation System – WAJO",
+  description:
+    "Built WAJO, a WhatsApp web automation system integrated into The Communal platform. The system enables scheduled messaging, broadcast management, and automated communication, helping communities deliver messages efficiently and accurately without manual sending.",
+  tags: [
+    { name: "whatsapp-api", color: "blue-text-gradient" },
+    { name: "automation", color: "green-text-gradient" },
+    { name: "expressjs", color: "pink-text-gradient" },
+  ],
+  image: wajo,
+  sourceCodeLink: "https://drive.google.com/drive/folders/1j3FWv4SgqpNoooOr0ZWrCfiPLYZQF8G-?usp=sharing",
+},{
+  name: "Face Recognition Gallery System – The Communal",
+  description:
+    "Developed a face recognition feature within The Communal gallery that allows users to automatically find their photos from community event documentation through facial detection. The system improves photo discovery efficiency while maintaining user privacy, using Laravel for backend services and Python for facial processing.",
+  tags: [
+    { name: "face-recognition", color: "blue-text-gradient" },
+    { name: "laravel", color: "green-text-gradient" },
+    { name: "python", color: "pink-text-gradient" },
+  ],
+  image: faceRecognition,
+  sourceCodeLink: "",
+}
+
+
+
+
+
+
+
+
 ];
 
 export { services, technologies, experiences, testimonials, projects };
