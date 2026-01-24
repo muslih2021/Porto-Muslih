@@ -73,7 +73,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       {isLoading && (
         <Loading
           name="Muslih Sahmat"
@@ -81,8 +81,8 @@ const App = () => {
         />
       )}
 
-      <div className="bg-primary relative z-0">
-        <div className="bg-primary relative z-0 h-screen w-screen">
+      <div className="bg-primary relative w-full z-0">
+        <div className="bg-primary relative z-0 h-screen w-full">
           <Hero />
         </div>
         <Navbar />

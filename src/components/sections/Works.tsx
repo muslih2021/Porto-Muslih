@@ -17,10 +17,10 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 }) => {
   return (
     <motion.div  
-      variants={fadeIn("up", "spring", index * 0.1, 0.35)}
+      variants={fadeIn("up", "spring", index * 0.05, 0.35)}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true, amount: 0.05 }} >
+  viewport={{ once: true, amount: 0.01}} >
       <Tilt
         glareEnable
         tiltEnable
@@ -60,10 +60,10 @@ const Works = () => {
 
       <div className="flex w-full">
         <motion.p
-               variants={fadeIn("up", "spring", 0.1, 0.35)}
+               variants={fadeIn("up", "spring", 0.05, 0.35)}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true, amount: 0.05 }} 
+  viewport={{ once: true, amount: 0.01 }} 
           className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
         >
           {config.sections.works.content}

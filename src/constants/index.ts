@@ -33,7 +33,7 @@ import {
   job,
   sampah,
   awing,
-  trubers,pnm,imedit,wajo,faceRecognition,nakamura
+  trubers,pnm,imedit,wajo,faceRecognition,nakamura,persuratan
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -274,6 +274,32 @@ const testimonials: TTestimonial[] = [
 ];
 
 const projects: TProject[] = [
+{
+  name: "Sistem Persuratan dan Pengarsipan Desa Ay", 
+  description:
+    "Sistem persuratan dan pengarsipan berbasis web yang dikembangkan untuk mendukung layanan administrasi desa secara digital. Aplikasi ini memungkinkan pengajuan surat, proses validasi, pelacakan status, serta pengelolaan arsip dokumen secara terstruktur sehingga mengurangi proses manual dan meningkatkan efisiensi pelayanan. Dibangun menggunakan React untuk frontend, Express.js untuk backend, JavaScript untuk logika aplikasi, serta SASS untuk tampilan antarmuka yang responsif dan mudah dikelola.",
+  tags: [
+    {
+      name: "react",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "expressjs",
+      color: "green-text-gradient",
+    },
+    {
+      name: "javascript",
+      color: "pink-text-gradient",
+    },
+    {
+      name: "sass",
+      color: "orange-text-gradient",
+    },
+  ],
+  image: persuratan,
+  sourceCodeLink: "https://drive.google.com/drive/folders/1fbp-87f8CkXT5aeodF2z7ce-7Vp9nZ9Q?usp=drive_link",
+},
+
   {
     name: "Smart Rental",
     description:
@@ -479,15 +505,17 @@ const projects: TProject[] = [
 },{
   name: "WhatsApp Automation System – WAJO",
   description:
-    "Built WAJO, a WhatsApp web automation system integrated into The Communal platform. The system enables scheduled messaging, broadcast management, and automated communication, helping communities deliver messages efficiently and accurately without manual sending.",
+    "Built WAJO, a WhatsApp web automation system integrated into The Communal platform. The system enables scheduled messaging, broadcast management, and automated WhatsApp communication. In addition, WAJO is equipped with an AI-powered chatbot that automatically assists Direct Sales in responding to customer inquiries, particularly related to roaming packages. The chatbot helps provide faster responses, reduce response delays during high-traffic situations, and improve overall customer service efficiency.",
   tags: [
     { name: "whatsapp-api", color: "blue-text-gradient" },
     { name: "automation", color: "green-text-gradient" },
+    { name: "ai-chatbot", color: "purple-text-gradient" },
     { name: "expressjs", color: "pink-text-gradient" },
   ],
   image: wajo,
   sourceCodeLink: "https://drive.google.com/drive/folders/1j3FWv4SgqpNoooOr0ZWrCfiPLYZQF8G-?usp=sharing",
-},{
+},
+{
   name: "Face Recognition Gallery System – The Communal",
   description:
     "Developed a face recognition feature within The Communal gallery that allows users to automatically find their photos from community event documentation through facial detection. The system improves photo discovery efficiency while maintaining user privacy, using Laravel for backend services and Python for facial processing.",

@@ -40,6 +40,7 @@ import pnm from "./pnm.png";
 import imedit from "./imedit.png";
 import wajo from "./wajo.jpg";
 import faceRecognition from "./faceRecognition.jpeg";
+import persuratan from "./persuratan.png";
 
 
 
@@ -77,5 +78,5 @@ export {
   sifa,
   job,
   sampah,
-  awing,pnm,imedit,wajo,faceRecognition,nakamura
+  awing,pnm,imedit,wajo,faceRecognition,nakamura,persuratan
 };
