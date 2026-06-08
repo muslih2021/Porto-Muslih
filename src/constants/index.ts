@@ -24,16 +24,12 @@ import {
   figma,
   docker,
   placeholderIcon,
-  rental,
-  insight,
-  himatika,
-  citta,
-  ratu,
-  sifa,
   job,
   sampah,
   awing,
-  trubers,pnm,imedit,wajo,faceRecognition,nakamura,persuratan
+  pnm,
+  imedit,
+  nakamura
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
