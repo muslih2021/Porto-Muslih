@@ -58,20 +58,20 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer (React & Laravel)",
-    icon: web,
+    title: "Video Editor (After Effects & CapCut)",
+    icon: creator,
   },
   {
-    title: "Android Developer (Kotlin)",
-    icon: mobile,
-  },
-  {
-    title: "UI/UX Designer (Figma,Picsart & Canva)",
+    title: "Graphic Designer (Figma, Picsart & Canva)",
     icon: backend, 
   },
   {
-    title: "Video Editor (After Effects)",
-    icon: creator,
+    title: "Motion Graphics (After Effects)",
+    icon: web,
+  },
+  {
+    title: "Visual Storytelling",
+    icon: mobile,
   },
 ];
 
@@ -227,7 +227,7 @@ const experiences: TExperience[] = [
   ],
 },
 {
-  title: "Video Editor Freelance",
+  title: "Video Editor",
   companyName: "Nakamura Culinary School • PT Permodalan Nasional Madani (PNM) • Imare Imedit Japan • A Wing Group",
   icon: placeholderIcon,
   iconBg: "#E6DEDD",
@@ -274,267 +274,88 @@ const testimonials: TTestimonial[] = [
 ];
 
 const projects: TProject[] = [
-{
-  name: "Sistem Persuratan dan Pengarsipan Desa Ay", 
-  description:
-    "Sistem persuratan dan pengarsipan berbasis web yang dikembangkan untuk mendukung layanan administrasi desa secara digital. Aplikasi ini memungkinkan pengajuan surat, proses validasi, pelacakan status, serta pengelolaan arsip dokumen secara terstruktur sehingga mengurangi proses manual dan meningkatkan efisiensi pelayanan. Dibangun menggunakan React untuk frontend, Express.js untuk backend, JavaScript untuk logika aplikasi, serta SASS untuk tampilan antarmuka yang responsif dan mudah dikelola.",
-  tags: [
-    {
-      name: "react",
-      color: "blue-text-gradient",
-    },
-    {
-      name: "expressjs",
-      color: "green-text-gradient",
-    },
-    {
-      name: "javascript",
-      color: "pink-text-gradient",
-    },
-    {
-      name: "sass",
-      color: "orange-text-gradient",
-    },
-  ],
-  image: persuratan,
-  sourceCodeLink: "https://drive.google.com/drive/folders/1fbp-87f8CkXT5aeodF2z7ce-7Vp9nZ9Q?usp=drive_link",
-},
-
-  {
-    name: "Smart Rental",
-    description:
-      "A desktop application built using Java to manage the rental schedule of various sports fields (e.g., futsal, badminton, volleyball). The system allows administrators to manage booking time slots, track field availability, and generate rental reports. Designed for offline use on Windows to provide a reliable and user-friendly solution for local sports venues.",
-    tags: [
-      {
-        name: "java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "java fx",
-        color: "green-text-gradient",
-      },
-    ],
-    image: rental,
-    sourceCodeLink: "https://drive.google.com/drive/folders/1xPEXXU-nir53pAuptCrblWMk2PkNKs_h?usp=sharing",
-  },
-  {
-    name: "InsightCart App",
-    description:
-      "Designed the UX/UI and developed an Android application to help MSMEs (Micro, Small, and Medium Enterprises) analyze product performance and manage inventory using machine learning. Collaborated in a cross-functional team consisting of members from Cloud Computing and Machine Learning learning paths.",
-    tags: [
-      {
-        name: "kotlin",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "green-text-gradient",
-      },
-      {
-        name: "python",
-        color: "pink-text-gradient",
-      },
-         {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-    ],
-    image: insight,
-    sourceCodeLink: "https://www.canva.com/design/DAGIqiNxYh8/ZSdO4R62eInNFjapqa4BJA/edit",
-  },
-  {
-    name: "WEB HIMATIKA FMIPA UNHAS",
-    description:
-   "Designed and developed the official information portal for the HIMATIKA organization, featuring an admin panel, organizational profile, event information system, blog, and organizational database. I was responsible for system design, creating the UI/UX design, and developing the website.",
-    tags: [
-      {
-        name: "Laravel",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "CSS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "JS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "MYSQL",
-        color: "yellow-text-gradient",
-      },
-    ],
-    image: himatika,
-    sourceCodeLink: "https://himatikafmipaunhas.id/",
-  },
-  {
-    name: "Citta Village Tourism Website",
-    description:
-   "Developed a digital platform to support village tourism promotion. Focused on user research, wireframing, and the implementation of a tourism information system. Contributed to both website design and development.",
-    tags: [
-      {
-        name: "React",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "MYSQL",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Prime React",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Express",
-        color: "red-text-gradient",
-      },
-    ],
-    image: citta,
-    sourceCodeLink: "https://drive.google.com/drive/folders/1vr33aUexGXilB4MslbMDPqDDHqeQske-?usp=sharing",
-  },
-  {
-    name: "Web Ratu Boga – a Local Culinary MSME",
-    description:
-    "Actively contributed to the system architecture, UI/UX design, and full-stack development of a website aimed at promoting local culinary businesses.a web-based ordering system to help small food vendors reach more customers and streamline the ordering process.",
-    tags: [
-      {
-        name: "Laravel",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "MYSQL",
-        color: "green-text-gradient",
-      },
-      {
-        name: "JS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "red-text-gradient",
-      },
-    ],
-    image: ratu,
-    sourceCodeLink: "https://drive.google.com/drive/folders/1b1dSH70YP3iS0evQMFCLRWLWz7XV-k3Y?usp=sharing",
-  },
-  {
-    name: "Faculty of Pharmacy Information System (SI-FA)",
-    description:
-     "Contributed to the development of the SI-FA system at Universitas Hasanuddin by designing UI/UX based on user needs and institutional guidelines, ensuring visual consistency, and improving functionality through UI testing and iteration.",
-    tags: [
-
-    ],
-    image: sifa,
-    sourceCodeLink: "https://sifa.unhas.ac.id/login",
-  },
   {
     name: "Job Fair – Event Video",
     description:
-     "Promotional and documentation video for the first Japan Job Fair in Makassar, featuring Japanese companies. Showcased the event atmosphere and participant engagement while supporting the organizer’s branding. Contributed as a Video Editor in planning and designing the video with a Japanese team, using After Effects for motion graphics and maintaining brand consistency.",
-    tags: [
-
-    ],
+      "Promotional and documentation video for the first Japan Job Fair in Makassar, featuring Japanese companies. Showcased the event atmosphere and participant engagement while supporting the organizer’s branding. Contributed as a Video Editor in planning and designing the video with a Japanese team, using After Effects for motion graphics and maintaining brand consistency.",
+    tags: [],
     image: job,
     sourceCodeLink: "https://drive.google.com/drive/folders/1dRfzl0k380A-5HXK0h6qHmu0O5Q5iCrg?usp=sharing",
   },
   {
     name: "Sustainable Waste Handling – Corporate Video",
     description:
-     "Edited a client presentation video on waste management as part of my role at A WING GROUP. Worked with a Japanese team to design and produce the video using Adobe After Effects, focusing on motion graphics, visual clarity, and consistent branding to effectively communicate the project’s goals to the client.",
-    tags: [
-
-    ],
+      "Edited a client presentation video on waste management as part of my role at A WING GROUP. Worked with a Japanese team to design and produce the video using Adobe After Effects, focusing on motion graphics, visual clarity, and consistent branding to effectively communicate the project’s goals to the client.",
+    tags: [],
     image: sampah,
     sourceCodeLink: "https://drive.google.com/drive/folders/1jSAqFlioTmSg8WfSDCAHHe0Pzpfd_8rk?usp=sharing",
   },
   {
     name: "Website Promotional Video – A WING GROUP",
     description:
-     "Edited a promotional video to be featured on A WING GROUP’s website, highlighting the company’s profile, services, and visual branding. Used Adobe After Effects for motion graphics and transitions to ensure a clean, engaging presentation aligned with the company's image.",
-    tags: [
-
-    ],
+      "Edited a promotional video to be featured on A WING GROUP’s website, highlighting the company’s profile, services, and visual branding. Used Adobe After Effects for motion graphics and transitions to ensure a clean, engaging presentation aligned with the company's image.",
+    tags: [],
     image: awing,
-    sourceCodeLink: "https://www.aai-jp.com/blank-17",
+    sourceCodeLink: "https://www.aai-jp.com/service",
   },
   {
-  name: "Promotional Video – Nakamura Culinary School",
-  description:
-    "Edited a promotional video to support Nakamura Culinary School’s business expansion into the Indonesian market. The video introduces the institution’s culinary programs, values, and brand identity, with storytelling adapted for a new international audience using clean transitions and engaging motion graphics.",
-  tags: [
-    { name: "video-editing", color: "blue-text-gradient" },
-    { name: "brand-promotion", color: "green-text-gradient" },
-    { name: "international-expansion", color: "pink-text-gradient" },
-  ],
-  image: nakamura,
-  sourceCodeLink: "https://drive.google.com/drive/folders/1ZzsZYTM-ziEzotyPG_jbEs_hNKI35yic?usp=sharing",
-},{
-  name: "Empowerment Program Video – PT Permodalan Nasional Madani (PNM)",
-  description:
-    "Produced and edited video content for PT Permodalan Nasional Madani (PNM) as part of a women empowerment program for housewives. The video highlights entrepreneurial activities, social impact, and economic empowerment through emotional storytelling and informative visual composition.",
-  tags: [
-    { name: "video-editing", color: "blue-text-gradient" },
-    { name: "social-impact", color: "green-text-gradient" },
-    { name: "corporate-program", color: "pink-text-gradient" },
-  ],
-  image: pnm,
-  sourceCodeLink: "https://drive.google.com/drive/folders/1i1jdH_loh1s757eHVT0YU0FgABrXgUK7?usp=sharing",
-},{
-  name: "AI Therapy Technology Promotional Video – Imare Imedit Japan",
-  description:
-    "Edited a promotional video for AI-based therapeutic technology developed by Imare Imedit Japan. The video presents complex technology concepts in a clear and accessible way through structured storytelling, professional motion graphics, and visually clean animations for global audiences.",
-  tags: [
-    { name: "video-editing", color: "blue-text-gradient" },
-    { name: "ai-technology", color: "green-text-gradient" },
-    { name: "motion-graphics", color: "pink-text-gradient" },
-  ],
-  image: imedit,
-  sourceCodeLink: "https://drive.google.com/drive/folders/1V_ruzogZryuCHt19QcSYJqXsUc51qAQn?usp=sharing",
-},
-{
-  name: "Internal Social Media Analytics Web System – Trubers Sulawesi",
-  description:
-    "Developed Trubers Sulawesi, an internal web application used to monitor Trust Builder social media performance. The system includes automated scoring, leaderboard generation for incentive distribution, and public data scraping from TikTok and Instagram to track likes, comments, views, and posting metrics.",
-  tags: [
-    { name: "reactjs", color: "blue-text-gradient" },
-    { name: "expressjs", color: "green-text-gradient" },
-    { name: "data-scraping", color: "pink-text-gradient" },
-  ],
-  image: trubers,
-  sourceCodeLink: "https://trubers.id",
-},{
-  name: "WhatsApp Automation System – WAJO",
-  description:
-    "Built WAJO, a WhatsApp web automation system integrated into The Communal platform. The system enables scheduled messaging, broadcast management, and automated WhatsApp communication. In addition, WAJO is equipped with an AI-powered chatbot that automatically assists Direct Sales in responding to customer inquiries, particularly related to roaming packages. The chatbot helps provide faster responses, reduce response delays during high-traffic situations, and improve overall customer service efficiency.",
-  tags: [
-    { name: "whatsapp-api", color: "blue-text-gradient" },
-    { name: "automation", color: "green-text-gradient" },
-    { name: "ai-chatbot", color: "purple-text-gradient" },
-    { name: "expressjs", color: "pink-text-gradient" },
-  ],
-  image: wajo,
-  sourceCodeLink: "https://drive.google.com/drive/folders/1j3FWv4SgqpNoooOr0ZWrCfiPLYZQF8G-?usp=sharing",
-},
-{
-  name: "Face Recognition Gallery System – The Communal",
-  description:
-    "Developed a face recognition feature within The Communal gallery that allows users to automatically find their photos from community event documentation through facial detection. The system improves photo discovery efficiency while maintaining user privacy, using Laravel for backend services and Python for facial processing.",
-  tags: [
-    { name: "face-recognition", color: "blue-text-gradient" },
-    { name: "laravel", color: "green-text-gradient" },
-    { name: "python", color: "pink-text-gradient" },
-  ],
-  image: faceRecognition,
-  sourceCodeLink: "",
-}
-
-
-
-
-
-
-
-
+    name: "Promotional Video – Nakamura Culinary School",
+    description:
+      "Edited a promotional video to support Nakamura Culinary School’s business expansion into the Indonesian market. The video introduces the institution’s culinary programs, values, and brand identity, with storytelling adapted for a new international audience using clean transitions and engaging motion graphics.",
+    tags: [
+      { name: "video-editing", color: "blue-text-gradient" },
+      { name: "brand-promotion", color: "green-text-gradient" },
+      { name: "international-expansion", color: "pink-text-gradient" },
+    ],
+    image: nakamura,
+    sourceCodeLink: "https://drive.google.com/drive/folders/1ZzsZYTM-ziEzotyPG_jbEs_hNKI35yic?usp=sharing",
+  },
+  {
+    name: "Empowerment Program Video – PT Permodalan Nasional Madani (PNM)",
+    description:
+      "Produced and edited video content for PT Permodalan Nasional Madani (PNM) as part of a women empowerment program for housewives. The video highlights entrepreneurial activities, social impact, and economic empowerment through emotional storytelling and informative visual composition.",
+    tags: [
+      { name: "video-editing", color: "blue-text-gradient" },
+      { name: "social-impact", color: "green-text-gradient" },
+      { name: "corporate-program", color: "pink-text-gradient" },
+    ],
+    image: pnm,
+    sourceCodeLink: "https://drive.google.com/drive/folders/1i1jdH_loh1s757eHVT0YU0FgABrXgUK7?usp=sharing",
+  },
+  {
+    name: "AI Therapy Technology Promotional Video – Imare Imedit Japan",
+    description:
+      "Edited a promotional video for AI-based therapeutic technology developed by Imare Imedit Japan. The video presents complex technology concepts in a clear and accessible way through structured storytelling, professional motion graphics, and visually clean animations for global audiences.",
+    tags: [
+      { name: "video-editing", color: "blue-text-gradient" },
+    ],
+    image: imedit,
+    sourceCodeLink: "https://drive.google.com/drive/folders/1V_ruzogZryuCHt19QcSYJqXsUc51qAQn?usp=sharing",
+  },
+  {
+    name: "Organization Project (Unpaid) – HIMATIKA FMIPA UNHAS",
+    description:
+      "Contributed as a volunteer video editor for HIMATIKA FMIPA UNHAS (Mathematics Student Association). Responsible for editing videos across various organizational events, delivering engaging event documentation, and producing promotional content to support the organization's activities and visual branding.",
+    tags: [
+      { name: "video-editing", color: "blue-text-gradient" },
+      { name: "event-documentation", color: "green-text-gradient" },
+      { name: "organization", color: "pink-text-gradient" },
+    ],
+    image: placeholderIcon,
+    sourceCodeLink: "https://drive.google.com/drive/folders/1oHqd9UZMeHLkEdBQb1-0Ji0IFN6gUwLv?usp=sharing",
+  },
+  {
+    name: "App Promo Video (Unpaid) – Eduternak",
+    description:
+      "Produced a promotional video for the 'Eduternak' application as part of a competition entry. The video was designed to showcase how the app helps farmers, using clear storytelling and engaging visuals to highlight the application's core features and social impact.",
+    tags: [
+      { name: "video-editing", color: "blue-text-gradient" },
+      { name: "app-promo", color: "green-text-gradient" },
+      { name: "competition", color: "pink-text-gradient" },
+    ],
+    image: placeholderIcon,
+    sourceCodeLink: "https://drive.google.com/drive/folders/1flp1SAXq8XYLYgXa92ESAmr98wlYliNR?usp=sharing",
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };

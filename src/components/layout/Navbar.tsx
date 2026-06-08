@@ -65,7 +65,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
+          <img src={logo} alt="logo" loading="lazy" className="h-9 w-9 object-contain" />
           <p className="flex cursor-pointer text-[18px] font-bold text-white ">
             {config.html.title}
           </p>
@@ -88,6 +88,7 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt="menu"
+            loading="lazy"
             className="h-[28px] w-[28px] object-contain"
             onClick={() => setToggle(!toggle)}
           />

@@ -33,6 +33,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
             <img
               src={image}
               alt={name}
+              loading="lazy"
               className="h-full w-full rounded-2xl object-cover"
             />
           </div>

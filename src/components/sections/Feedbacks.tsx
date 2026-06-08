@@ -37,6 +37,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
         <img
           src={image}
           alt={`feedback_by-${name}`}
+          loading="lazy"
           className="h-10 w-10 rounded-full object-cover"
         />
       </div>

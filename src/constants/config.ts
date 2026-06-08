@@ -46,7 +46,7 @@ export const config: TConfig = {
   },
 hero: {
   name: "Muslih Sahmat",
-  p: ["I'm a Web & Android Developer,", "Graphic Designer & Video Editor"],
+  p: ["I'm a Video Editor", "& Graphic Designer"],
 },
   contact: {
     p: "Get in touch",
@@ -67,7 +67,7 @@ hero: {
   about: {
     p: "Introduction",
     h2: "Overview.",
-    content: `I'm a versatile developer with experience in React, Express and Laravel for web development, Kotlin adn Java for Android apps, and design skills using  Picsart,Canva,Figma, and After Effects. I build functional, user-focused applications and creative visual content to bring ideas to life.`,
+    content: `I'm a creative video editor and graphic designer with expertise in Adobe After Effects, Figma, Canva, and Picsart. I specialize in crafting engaging visual content, motion graphics, and compelling storytelling to bring ideas to life.`,
   },
   experience: {
     p: "What I have done so far",
@@ -80,7 +80,7 @@ hero: {
   works: {
     p: "My work",
     h2: "Projects.",
-    content: `"These projects highlight my skills in web development, mobile apps, video editing, and design. Click on a project to explore a detailed example. Please note that some works are not publicly displayed due to client confidentiality or sensitive internal data."`,
+    content: `"These projects highlight my skills in video editing, motion graphics, and visual design. Click on a project to explore a detailed example. Please note that some works are not publicly displayed due to client confidentiality or sensitive internal data."`,
   },
 },
 

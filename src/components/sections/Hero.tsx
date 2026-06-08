@@ -124,8 +124,8 @@ import { fadeIn } from "../../utils/motion";
 const Hero = () => {
   const texts = [
     "Hi, I'm Muslih Sahmat",
-    "I'm a Web & Android Developer",
-    "Graphic Designer & Video Editor"
+    "I'm a Video Editor",
+    "& Graphic Designer"
   ];
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);

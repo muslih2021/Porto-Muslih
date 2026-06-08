@@ -45,8 +45,7 @@
 
 // export default App;
 import { BrowserRouter } from "react-router-dom";
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
 import {
   About,
   Contact,
@@ -54,32 +53,18 @@ import {
   Hero,
   Navbar,
   Works,
-  StarsCanvas,
 } from "./components";
-import Loading from "./components/Loading";
 import { config } from "./constants/config";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     if (document.title !== config.html.title) {
       document.title = config.html.title;
     }
   }, []);
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
-
   return (
     <BrowserRouter >
-      {isLoading && (
-        <Loading
-          name="Muslih Sahmat"
-          onComplete={handleLoadingComplete}
-        />
-      )}
 
       <div className="bg-primary relative w-full z-0">
         <div className="bg-primary relative z-0 h-screen w-full">
@@ -87,12 +72,11 @@ const App = () => {
         </div>
         <Navbar />
         <About />
-        <Experience />
-        {/* <Tech /> */}
         <Works />
+        {/* <Tech /> */}
+        <Experience />
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>
