@@ -69,10 +69,11 @@ import React, { useRef } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import { services } from "../../constants";
+import { roleServices } from "../../constants";
 import { SectionWrapper } from "../../hoc";
-import { config } from "../../constants/config";
+import { config, roleConfigs, getRoleFromPath } from "../../constants/config";
 import { Header } from "../atoms/Header";
+import { useLocation } from "react-router-dom";
 
 interface IServiceCard {
   index: number;
@@ -156,6 +157,8 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
 const About = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
+  const { pathname } = useLocation();
+  const role = getRoleFromPath(pathname);
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -211,13 +214,13 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
         >
-          {config.sections.about.content}
+          {roleConfigs[role].aboutContent}
         </motion.p>
 
         {/* Service Cards */}
         <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
-          {services && services.length > 0 ? (
-            services.map((service, index) => (
+          {roleServices[role] && roleServices[role].length > 0 ? (
+            roleServices[role].map((service, index) => (
               <ServiceCard key={service.title} index={index} {...service} />
             ))
           ) : (

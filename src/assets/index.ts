@@ -19,12 +19,13 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-
+import eduternak from "./eduternak.png";
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import placeholderIcon from "./company/placeholderIcon.png";
+import talaud from "./talaud.jpg";
+import himatika_og from "./himatika_og.png";
 import tesla from "./company/tesla.png";
-
 import rental from "./rental.png";
 import insight from "./insight.jpg";
 import himatika from "./himatika.png";
@@ -69,14 +70,17 @@ export {
   meta,
   shopify,
   placeholderIcon,
+  talaud,
+  himatika_og,
+  eduternak,
   tesla,
   rental,
   insight,
-  himatika,trubers,
+  himatika, trubers,
   citta,
   ratu,
   sifa,
   job,
   sampah,
-  awing,pnm,imedit,wajo,faceRecognition,nakamura,persuratan
+  awing, pnm, imedit, wajo, faceRecognition, nakamura, persuratan
 };

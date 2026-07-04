@@ -44,7 +44,7 @@
 // };
 
 // export default App;
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import {
   About,
@@ -56,6 +56,24 @@ import {
 } from "./components";
 import { config } from "./constants/config";
 
+const MainContent = () => {
+  return (
+    <div className="bg-primary relative w-full z-0">
+      <div className="bg-primary relative z-0 h-screen w-full">
+        <Hero />
+      </div>
+      <Navbar />
+      <About />
+      <Works />
+      {/* <Tech /> */}
+      <Experience />
+      <div className="relative z-0">
+        <Contact />
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   useEffect(() => {
     if (document.title !== config.html.title) {
@@ -64,21 +82,10 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter >
-
-      <div className="bg-primary relative w-full z-0">
-        <div className="bg-primary relative z-0 h-screen w-full">
-          <Hero />
-        </div>
-        <Navbar />
-        <About />
-        <Works />
-        {/* <Tech /> */}
-        <Experience />
-        <div className="relative z-0">
-          <Contact />
-        </div>
-      </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<MainContent />} />
+      </Routes>
     </BrowserRouter>
   );
 };

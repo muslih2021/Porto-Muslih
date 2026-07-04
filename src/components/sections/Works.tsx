@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { projects } from "../../constants";
 import { fadeIn } from "../../utils/motion";
-import { config } from "../../constants/config";
+import { config, roleConfigs, getRoleFromPath } from "../../constants/config";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Header } from "../atoms/Header";
 import { TProject } from "../../types";
 
@@ -54,7 +56,26 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   );
 };
 
+const chips = [
+  { label: "All", value: "general" },
+  { label: "Data Analyst", value: "data_analis" },
+  { label: "Video Editor", value: "video_editor" },
+  { label: "Programmer", value: "programmer" }
+];
+
 const Works = () => {
+  const { pathname } = useLocation();
+  const initialRole = getRoleFromPath(pathname);
+  const [activeChip, setActiveChip] = useState<string>(initialRole);
+
+  useEffect(() => {
+    setActiveChip(initialRole);
+  }, [initialRole]);
+
+  const filteredProjects = activeChip === 'general' 
+    ? projects 
+    : projects.filter(p => p.category === activeChip);
+
   return (
     <>
       <Header useMotion={true} {...config.sections.works} />
@@ -67,12 +88,28 @@ const Works = () => {
   viewport={{ once: true, amount: 0.01 }} 
           className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
         >
-          {config.sections.works.content}
+          {roleConfigs[initialRole].worksContent}
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap  justify-center  gap-7">
-        {projects.map((project, index) => (
+      <div className="mt-8 flex flex-wrap gap-4">
+        {chips.map(chip => (
+          <button
+            key={chip.value}
+            onClick={() => setActiveChip(chip.value)}
+            className={`px-4 py-2 rounded-full border transition-all cursor-pointer ${
+              activeChip === chip.value
+                ? 'bg-tertiary border-[#915EFF] text-white shadow-[0_0_10px_rgba(145,94,255,0.5)]'
+                : 'bg-transparent border-secondary text-secondary hover:text-white hover:border-white'
+            }`}
+          >
+            {chip.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-wrap justify-center gap-7">
+        {filteredProjects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>

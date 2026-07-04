@@ -120,13 +120,13 @@ import { useState, useEffect, useRef } from "react";
 
 import { styles } from "../../constants/styles";
 import { fadeIn } from "../../utils/motion";
+import { useLocation } from "react-router-dom";
+import { roleConfigs, getRoleFromPath } from "../../constants/config";
 
 const Hero = () => {
-  const texts = [
-    "Hi, I'm Muslih Sahmat",
-    "I'm a Video Editor",
-    "& Graphic Designer"
-  ];
+  const { pathname } = useLocation();
+  const role = getRoleFromPath(pathname);
+  const texts = roleConfigs[role].heroTexts;
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
