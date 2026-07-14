@@ -294,9 +294,9 @@ const testimonials: TTestimonial[] = [
 
 const projects: TProject[] = [
   {
-    name: "Sistem Persuratan dan Pengarsipan Desa Ay",
+    name: "Village Letter & Archive System – Desa Ay",
     description:
-      "Sistem persuratan dan pengarsipan berbasis web yang dikembangkan untuk mendukung layanan administrasi desa secara digital. Aplikasi ini memungkinkan pengajuan surat, proses validasi, pelacakan status, serta pengelolaan arsip dokumen secara terstruktur sehingga mengurangi proses manual dan meningkatkan efisiensi pelayanan. Dibangun menggunakan React untuk frontend, Express.js untuk backend, JavaScript untuk logika aplikasi, serta SASS untuk tampilan antarmuka yang responsif dan mudah dikelola.",
+      "A web-based letter management and archiving system developed to digitize village administrative services. The application allows residents to submit letters, track validation status, and manage structured document archives, reducing manual processes and improving service efficiency. Built using React for the frontend, Express.js for the backend, JavaScript for application logic, and SASS for a responsive and maintainable interface.",
     category: "programmer",
     tags: [
       { name: "react", color: "blue-text-gradient" },
@@ -515,9 +515,9 @@ const projects: TProject[] = [
     sourceCodeLink: "",
   },
   {
-    name: "Data Scraping & Analysis – Telkomsel Edukasi Digital",
+    name: "Data Scraping & Analysis – Telkomsel Digital Education",
     description:
-      "Melakukan scraping, pengolahan, dan validasi data sekolah di daerah 3T (Talaud & Sangihe) dari sumber Kemendikbud, PDDikti, dan Dapodik, disertai verifikasi lapangan untuk mendukung program edukasi digital Telkomsel.",
+      "Performed scraping, processing, and validation of school data in remote and underdeveloped (3T) regions — Talaud and Sangihe Islands — using sources from Kemendikbud, PDDikti, and Dapodik, along with field verification, to support Telkomsel's digital education expansion program.",
     category: "data_analis",
     tags: [
       { name: "data-scraping", color: "blue-text-gradient" },

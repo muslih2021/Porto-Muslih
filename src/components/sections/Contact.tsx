@@ -1,4 +1,4 @@
-import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaEnvelope, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
 import { config } from "../../constants/config";
@@ -35,6 +35,16 @@ const Contact = () => {
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="hover:text-green-400 transition-colors duration-300" />
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/moh-muslih-sahmat-4a1353250"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin className="hover:text-blue-400 transition-colors duration-300" />
         </a>
       </div>
     </div>
