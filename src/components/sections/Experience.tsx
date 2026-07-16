@@ -1,4 +1,4 @@
-import React from "react";
+
 import { lannisterLogo } from "../../assets";
 import { motion } from "framer-motion";
 import { experiences } from "../../constants";
