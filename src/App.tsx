@@ -24,8 +24,8 @@
 //       <div className="bg-primary relative z-0">
 //         <div className="bg-primary relative z-0 h-screen w-screen">
 
-        
- 
+
+
 //           <Hero />
 
 //         </div>
@@ -53,21 +53,28 @@ import {
   Hero,
   Navbar,
   Works,
+  Certificates,
 } from "./components";
 import { config } from "./constants/config";
 
 const MainContent = () => {
   return (
     <div className="bg-primary relative w-full z-0">
-      <div className="bg-primary relative z-0 h-screen w-full">
+      {/* Fixed Hero section */}
+      <div className="bg-primary fixed top-0 left-0 z-0 h-screen w-full">
         <Hero />
       </div>
-      <Navbar />
-      <About />
-      <Works />
-      {/* <Tech /> */}
-      <Experience />
-      <div className="relative z-0">
+
+      {/* Spacer to push the scrolling content down by one screen height */}
+      <div className="h-screen w-full pointer-events-none"></div>
+
+      {/* Content that scrolls over the Hero */}
+      <div className="relative z-10">
+        <Navbar />
+        <About />
+        <Works />
+        <Certificates />
+        <Experience />
         <Contact />
       </div>
     </div>

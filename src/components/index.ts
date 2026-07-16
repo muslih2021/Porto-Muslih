@@ -8,6 +8,7 @@ import About from "./sections/About";
 import Tech from "./sections/Tech";
 import Experience from "./sections/Experience";
 import Works from "./sections/Works";
+import Certificates from "./sections/Certificates";
 import Feedbacks from "./sections/Feedbacks";
 import Contact from "./sections/Contact";
 export {
@@ -17,6 +18,7 @@ export {
   Tech,
   Experience,
   Works,
+  Certificates,
   Feedbacks,
   Contact,
   BallCanvas,

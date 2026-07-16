@@ -58,6 +58,10 @@ export const navLinks: TNavLink[] = [
     title: "Projects",
   },
   {
+    id: "certificates",
+    title: "Certificates",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
@@ -247,10 +251,10 @@ const experiences: TExperience[] = [
   },
   {
     title: "Video Editor",
-    companyName: "Nakamura Culinary School • PT Permodalan Nasional Madani (PNM) • Imare Imedit Japan • A Wing Group",
+    companyName: "Nakamura Culinary School • PT Permodalan Nasional Madani (PNM) • Imare Imedit Japan",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
-    date: "Late 2025 – Present",
+    date: "Late 2025",
     points: [
       "Edited promotional video content for Nakamura Culinary School to support business expansion into the Indonesian market, focusing on brand positioning, cultural relevance, and clear messaging to introduce the institution to a new international audience.",
 

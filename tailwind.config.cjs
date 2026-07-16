@@ -4,6 +4,10 @@ module.exports = {
   mode: 'jit',
   theme: {
     extend: {
+      fontFamily: {
+        got: ['"Game of Thrones"', 'sans-serif'],
+        sans: ['"Alegreya"', 'serif'],
+      },
       colors: {
         primary: '#050816',
         secondary: '#aaa6c3',

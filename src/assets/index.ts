@@ -42,12 +42,42 @@ import imedit from "./imedit.png";
 import wajo from "./wajo.jpg";
 import faceRecognition from "./faceRecognition.jpeg";
 import persuratan from "./persuratan.png";
+import myimage from "./got/myimage.png";
+import redlogo from "./got/redlogo.png";
+import redlogso from "./got/redlogso.png";
+import starkLogo from "./got/stark.png";
+import lannisterLogo from "./got/lanister.png";
+import baratheonLogo from "./got/barathion.png";
+import gotBanner from "./got/banner.png";
+import tullyLogo from "./got/tully.png";
 
-
-
+// Sertifikat images
+import certCodepolitanJs from "./sertifikat/Certificate Detail - CODEPOLITAN_page-0001.jpg";
+import certCodepolitanReact from "./sertifikat/Certificate Detail - CODEPOLITANreact_page-0001.jpg";
+import certTelkomsel from "./sertifikat/Sertifikat TIP - Moh Muslih Sahmat_page-0001.jpg";
+import certHackerRankJs from "./sertifikat/javascript_basic certificate_page-0001.jpg";
+import certKampusMerdeka from "./sertifikat/img11.jpg";
+import certDicodingDasarAI from "./sertifikat/img12.jpg";
+import certDicodingAndroidIntermediate from "./sertifikat/img15.jpg";
+import certDicodingMLAndroid from "./sertifikat/img16.jpg";
+import certDicodingSOLID from "./sertifikat/img19.jpg";
+import certDicodingAndroidFundamental from "./sertifikat/img20.jpg";
+import certDicodingAndroidPemula from "./sertifikat/img23.jpg";
+import certDicodingKotlin from "./sertifikat/img24.jpg";
+import certDicodingLogika from "./sertifikat/img27.jpg";
+import certDicodingDasarPemrograman from "./sertifikat/img28.jpg";
+import certDicodingGit from "./sertifikat/img31.jpg";
 
 export {
   logo,
+  myimage,
+  redlogo,
+  redlogso,
+  starkLogo,
+  lannisterLogo,
+  baratheonLogo,
+  tullyLogo,
+  gotBanner,
   backend,
   creator,
   mobile,
@@ -82,5 +112,20 @@ export {
   sifa,
   job,
   sampah,
-  awing, pnm, imedit, wajo, faceRecognition, nakamura, persuratan
+  awing, pnm, imedit, wajo, faceRecognition, nakamura, persuratan,
+  certCodepolitanJs,
+  certCodepolitanReact,
+  certTelkomsel,
+  certHackerRankJs,
+  certKampusMerdeka,
+  certDicodingDasarAI,
+  certDicodingAndroidIntermediate,
+  certDicodingMLAndroid,
+  certDicodingSOLID,
+  certDicodingAndroidFundamental,
+  certDicodingAndroidPemula,
+  certDicodingKotlin,
+  certDicodingLogika,
+  certDicodingDasarPemrograman,
+  certDicodingGit,
 };

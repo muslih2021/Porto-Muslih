@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
@@ -10,16 +10,30 @@ const Navbar = () => {
   const [active, setActive] = useState<string | null>();
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      const currentScrollY = window.scrollY;
+
+      // Handle transparent vs solid background
+      if (currentScrollY > 100) {
         setScrolled(true);
       } else {
         setScrolled(false);
-        setActive("");
+        if (currentScrollY === 0) setActive("");
       }
+
+      // Handle hide/show on scroll direction
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true); // Scrolled down
+      } else {
+        setHidden(false); // Scrolled up
+      }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -50,12 +64,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
-      
+      className={`${styles.paddingX
+        } fixed top-0 z-50 flex w-full items-center py-5 transition-all duration-300 ${scrolled ? "bg-[#FBFBE2]/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        } ${hidden ? "-translate-y-full" : "translate-y-0"}`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link
@@ -65,9 +76,8 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" loading="lazy" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            {config.html.title}
+          <p className="flex cursor-pointer text-[22px] tracking-wider font-got text-[#8F000D] uppercase hover:tracking-[0.18em] transition-all duration-300">
+            Muslih Sahmat
           </p>
         </Link>
 
@@ -75,9 +85,8 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.id ? "text-white" : "text-secondary"
-              } cursor-pointer text-[18px] font-medium hover:text-white`}
+              className={`${active === nav.id ? "text-[#8F000D] font-bold" : "text-[#8F000D]/80"
+                } cursor-pointer text-[14px] font-got tracking-wide hover:text-[#8F000D] hover:tracking-[0.25em] transition-all duration-300`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
@@ -89,22 +98,21 @@ const Navbar = () => {
             src={toggle ? close : menu}
             alt="menu"
             loading="lazy"
-            className="h-[28px] w-[28px] object-contain"
+            className="h-[28px] w-[28px] object-contain filter invert"
+            style={{ filter: "sepia(100%) saturate(2000%) hue-rotate(330deg) brightness(80%)" }}
             onClick={() => setToggle(!toggle)}
           />
 
           <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
+            className={`${!toggle ? "hidden" : "flex"
+              } bg-[#FBFBE2] border border-[#8F000D]/20 absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6 shadow-lg`}
           >
             <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
-                    active === nav.id ? "text-white" : "text-secondary"
-                  }`}
+                  className={`font-got cursor-pointer text-[14px] tracking-wide ${active === nav.id ? "text-[#8F000D] font-bold" : "text-[#8F000D]/80"
+                    } hover:tracking-[0.25em] transition-all duration-300`}
                   onClick={() => {
                     setToggle(!toggle);
                   }}
