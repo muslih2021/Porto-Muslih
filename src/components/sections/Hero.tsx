@@ -208,7 +208,7 @@ const Hero = () => {
         <GlitchTitle />
 
         {/* Character photo - anchored to bottom, centered on mobile/tablet */}
-        <div className="absolute inset-x-0 bottom-0 top-0 flex justify-center lg:justify-start z-10 pointer-events-none">
+        <div className="absolute inset-x-0 md:-left-24 bottom-0 md:top-0 -top-32 flex justify-center lg:justify-start z-10 pointer-events-none">
           <div className="relative h-full w-full flex justify-center lg:justify-start items-end">
             <motion.img
               initial={{ opacity: 0 }}
@@ -217,7 +217,7 @@ const Hero = () => {
               src={myimage}
               alt="Muslih Sahmat"
               style={{
-                height: "clamp(20%, 88%, 125%)",
+                height: "clamp(20%, 80%, 125%)",
                 width: "auto",
               }}
               className="pointer-events-auto z-10 object-contain translate-x-0 lg:translate-x-[22%]"
