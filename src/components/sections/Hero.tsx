@@ -12,7 +12,6 @@ const TITLE_WORDS = ["PORTFOLIO", "ポートフォリオ"];
 // ─────────────────────────────────────────────
 const GlitchTitle = () => {
   const [displayChars, setDisplayChars] = useState<string[]>([]);
-  const [hasEntered, setHasEntered] = useState(false);
   const wordIdx = useRef(0);
   const rafId = useRef(0);
 
@@ -70,7 +69,6 @@ const GlitchTitle = () => {
 
     // Start the glitch cycle after the entrance animation
     timeout = setTimeout(() => {
-      setHasEntered(true);
       wordIdx.current = 1; // start from Japanese
       startLoop();
     }, 2500);
