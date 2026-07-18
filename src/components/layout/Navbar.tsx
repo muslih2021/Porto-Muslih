@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
-import { menu, close } from "../../assets";
 
 // ─────────────────────────────────────────────
 // Animated Glassmorphic Menu Trigger Button
