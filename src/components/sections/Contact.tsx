@@ -105,15 +105,46 @@ const Contact = () => {
               marginBottom: "clamp(12px, 2vw, 28px)",
             }}
           >
-            LET'S BUILD<br />SOMETHING<br />TOGETHER.
+            {/* Each line animates differently */}
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              LET'S BUILD
+            </motion.span>
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            >
+              SOMETHING
+            </motion.span>
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, scale: 0.7, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            >
+              TOGETHER.
+            </motion.span>
           </h2>
-          <p
+          <motion.p
             className="font-sans font-light leading-relaxed opacity-90"
             style={{ fontSize: "clamp(12px, 1.3vw, 16px)", maxWidth: "380px" }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 0.9, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             Available for freelance opportunities in development,<br className="hidden md:inline" />
             full stack application development, data analysis, and video production.
-          </p>
+          </motion.p>
         </div>
 
         {/* ── Bottom: social links + copyright ── */}
@@ -121,49 +152,71 @@ const Contact = () => {
           className="flex flex-col sm:flex-row justify-between items-start sm:items-end"
           style={{ gap: "clamp(16px, 3vw, 32px)", marginTop: "clamp(40px, 8vw, 100px)" }}
         >
-          {/* Social Links */}
+          {/* Social Links — each animates in differently */}
           <div
             className="flex flex-nowrap items-center"
             style={{ gap: "clamp(12px, 3vw, 48px)", fontSize: "clamp(10px, 1.2vw, 15px)" }}
           >
-            <a
+            <motion.a
               href="mailto:sahmatmuslih@gmail.com"
               className="flex items-center gap-2 hover:opacity-60 transition-opacity font-sans font-light"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
             >
               <MailIcon /> Mail
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/moh-muslih-sahmat-4a1353250"
               target="_blank" rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-60 transition-opacity font-sans font-light"
+              initial={{ opacity: 0, y: 30, rotate: -5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.75 }}
             >
               <LinkIcon /> LinkedIn
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://www.instagram.com/moh_sahmat"
               target="_blank" rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-60 transition-opacity font-sans font-light"
+              initial={{ opacity: 0, x: -20, scale: 0.8 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.9 }}
             >
               <InstagramIcon /> Instagram
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://wa.me/+6285393913005"
               target="_blank" rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-60 transition-opacity font-sans font-light"
+              initial={{ opacity: 0, y: 30, rotate: 5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 1.05 }}
             >
               <ChatIcon /> WhatsApp
-            </a>
+            </motion.a>
           </div>
 
-          {/* Copyright - centered on mobile, right on desktop */}
-          <div className="w-full flex justify-center md:justify-end mt-8 md:mt-0">
+          {/* Copyright */}
+          <motion.div
+            className="w-full flex justify-center md:justify-end mt-8 md:mt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
             <p
               className="font-sans font-light opacity-60 text-center md:text-right"
               style={{ fontSize: "clamp(10px, 1.1vw, 13px)", lineHeight: 1.6 }}
             >
               © 2024 Muslih Sahmat. Built with Code and Vision.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import Works from "./sections/Works";
 import Certificates from "./sections/Certificates";
 import Feedbacks from "./sections/Feedbacks";
 import Contact from "./sections/Contact";
+import { ScrollButton } from "./layout/ScrollButton";
 export {
   Hero,
   Navbar,
@@ -22,4 +23,5 @@ export {
   Feedbacks,
   Contact,
   BallCanvas,
+  ScrollButton,
 };

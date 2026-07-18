@@ -26,11 +26,10 @@ const BannerCard: React.FC<{ index: number; onDetail: () => void } & TProject> =
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative flex flex-col items-center select-none"
       style={{ width: `${CARD_W}px`, height: `${CARD_H}px` }}
     >
@@ -130,13 +129,14 @@ const ProjectDetailModal: React.FC<{
     if (project) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
+      // Check if the ProjectsModal is still open (z-50 modal container)
+      const allProjectsModalOpen = document.querySelector('[class*="z-50"][class*="overflow-y-auto"]');
+      if (!allProjectsModalOpen) {
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+      }
     };
   }, [project]);
 
@@ -181,9 +181,9 @@ const ProjectDetailModal: React.FC<{
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => {
                   const colorMap: Record<string, { bg: string; text: string }> = {
-                    "blue-text-gradient":   { bg: "#dbeafe", text: "#1d4ed8" },
-                    "green-text-gradient":  { bg: "#dcfce7", text: "#15803d" },
-                    "pink-text-gradient":   { bg: "#fce7f3", text: "#be185d" },
+                    "blue-text-gradient": { bg: "#dbeafe", text: "#1d4ed8" },
+                    "green-text-gradient": { bg: "#dcfce7", text: "#15803d" },
+                    "pink-text-gradient": { bg: "#fce7f3", text: "#be185d" },
                     "orange-text-gradient": { bg: "#ffedd5", text: "#c2410c" },
                   };
                   const colors = colorMap[tag.color] ?? { bg: "#f3f4f6", text: "#374151" };
@@ -265,13 +265,15 @@ const ProjectsModal: React.FC<{
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
+      // Only restore scroll if the detail modal is not active either
+      // (checking if any modal elements are active before unlocking body)
+      const detailActive = document.querySelector('[class*="z-[200]"]');
+      if (!detailActive) {
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+      }
     };
   }, [isOpen]);
 
@@ -318,7 +320,7 @@ const ProjectsModal: React.FC<{
                       padding: "4px 14px",
                       border: "1px solid #8F000D",
                       background: activeChip === chip.value ? "#8F000D" : "transparent",
-                      color:      activeChip === chip.value ? "#fff"    : "#8F000D",
+                      color: activeChip === chip.value ? "#fff" : "#8F000D",
                     }}
                   >
                     {chip.label}
@@ -384,10 +386,10 @@ const ProjectsModal: React.FC<{
 // Filter chips config
 // ─────────────────────────────────────────────
 const chips = [
-  { label: "ALL",          value: "general"      },
-  { label: "DATA ANALYST", value: "data_analis"  },
+  { label: "ALL", value: "general" },
+  { label: "DATA ANALYST", value: "data_analis" },
   { label: "VIDEO EDITOR", value: "video_editor" },
-  { label: "APPLICATION",  value: "programmer"   },
+  { label: "APPLICATION", value: "programmer" },
 ];
 
 // ─────────────────────────────────────────────
@@ -411,9 +413,9 @@ const Works = () => {
 
   const visibleProjects = filteredProjects.slice(0, 3);
 
-  const openModal  = useCallback(() => setModalOpen(true),  []);
+  const openModal = useCallback(() => setModalOpen(true), []);
   const closeModal = useCallback(() => setModalOpen(false), []);
-  const openDetail  = useCallback((p: TProject) => setSelectedProject(p), []);
+  const openDetail = useCallback((p: TProject) => setSelectedProject(p), []);
   const closeDetail = useCallback(() => setSelectedProject(null), []);
 
   return (
@@ -481,14 +483,75 @@ const Works = () => {
             >
               MY WORK
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.12 }} viewport={{ once: true }}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.25,
+                    delayChildren: 0.15,
+                  }
+                }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="text-[#8F000D] mt-4 max-w-2xl text-[16px] md:text-[18px] leading-[1.8] font-light"
             >
-              {roleConfigs[initialRole]?.worksContent ??
-                "A selection of recent projects across web development, data analysis, and video production."}
-            </motion.p>
+              {(() => {
+                const text = roleConfigs[initialRole]?.worksContent ??
+                  "A selection of recent projects across web development, data analysis, and video production.";
+                
+                // If it contains the long string, split by sentence to animate it sequentially.
+                if (text.includes("These projects highlight")) {
+                  return (
+                    <>
+                      <motion.span
+                        variants={{
+                          hidden: { opacity: 0, y: 15 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                        }}
+                        className="inline"
+                      >
+                        These projects highlight my comprehensive skills in video editing, motion graphics, visual design, and web development.{" "}
+                      </motion.span>
+                      <motion.span
+                        variants={{
+                          hidden: { opacity: 0, y: 15 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                        }}
+                        className="inline"
+                      >
+                        Click on a project to explore a detailed example.{" "}
+                      </motion.span>
+                      <motion.span
+                        variants={{
+                          hidden: { opacity: 0, y: 15 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                        }}
+                        className="inline"
+                      >
+                        Please note that some works are not publicly displayed due to client confidentiality or sensitive internal data.
+                      </motion.span>
+                    </>
+                  );
+                }
+
+                // Fallback for other role types
+                return (
+                  <motion.span
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="inline"
+                  >
+                    {text}
+                  </motion.span>
+                );
+              })()}
+            </motion.div>
           </div>
 
           {/* Filter chips */}
@@ -507,7 +570,7 @@ const Works = () => {
                   padding: "5px 15px",
                   border: "1px solid #8F000D",
                   background: activeChip === chip.value ? "#8F000D" : "transparent",
-                  color:      activeChip === chip.value ? "#ffffff" : "#8F000D",
+                  color: activeChip === chip.value ? "#ffffff" : "#8F000D",
                 }}
               >
                 {chip.label}
@@ -566,7 +629,7 @@ const Works = () => {
         filteredProjects={filteredProjects}
         chips={chips}
         setActiveChip={setActiveChip}
-        onSelectProject={(p) => { closeModal(); openDetail(p); }}
+        onSelectProject={(p) => { openDetail(p); }}
       />
 
       {/* ── Project Detail Modal ── */}

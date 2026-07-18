@@ -54,6 +54,7 @@ import {
   Navbar,
   Works,
   Certificates,
+  ScrollButton,
 } from "./components";
 import { config } from "./constants/config";
 
@@ -76,6 +77,7 @@ const MainContent = () => {
         <Certificates />
         <Experience />
         <Contact />
+        <ScrollButton />
       </div>
     </div>
   );

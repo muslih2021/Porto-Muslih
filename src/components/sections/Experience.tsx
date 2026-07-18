@@ -1,16 +1,84 @@
 
 import { lannisterLogo } from "../../assets";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { experiences } from "../../constants";
+import { useRef } from "react";
+
+// ─────────────────────────────────────────────
+// Animated Timeline Node
+// ─────────────────────────────────────────────
+const TimelineNode: React.FC<{ index: number }> = ({ index }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  return (
+    <div ref={ref} className="absolute left-0 mt-[6px] w-[13px] h-[13px] z-10 flex items-center justify-center">
+      {/* Ping / glow ring */}
+      <motion.div
+        className="absolute rounded-sm"
+        style={{
+          width: "13px",
+          height: "13px",
+          border: "2px solid #8F000D",
+          backgroundColor: "transparent",
+        }}
+        initial={{ scale: 1, opacity: 0.7 }}
+        animate={isInView ? {
+          scale: [1, 2.2, 2.5],
+          opacity: [0.7, 0.3, 0],
+        } : {}}
+        transition={{
+          duration: 0.8,
+          delay: index * 0.15 + 0.3,
+          ease: "easeOut",
+        }}
+      />
+
+      {/* Main dot */}
+      <motion.div
+        className="rounded-sm"
+        style={{
+          width: "13px",
+          height: "13px",
+          border: "2px solid #8F000D",
+        }}
+        initial={{
+          scale: 0,
+          backgroundColor: "#F8F8EB",
+        }}
+        animate={isInView ? {
+          scale: [0, 1.4, 1],
+          backgroundColor: "#8F000D",
+        } : {}}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.15 + 0.1,
+          ease: [0.34, 1.56, 0.64, 1], // spring-like bounce
+        }}
+      />
+    </div>
+  );
+};
 
 const Experience = () => {
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll progress within the timeline container
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 80%", "end 50%"],
+  });
+
+  // Map scroll progress to line height (0% → 100%)
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <>
       <div
         id="experience"
         className="relative overflow-hidden pt-16 pb-32"
         style={{
-          backgroundColor: "#F8F8EB", // Ivory background matching the image
+          backgroundColor: "#F8F8EB",
           position: "relative",
           left: "50%",
           right: "50%",
@@ -126,33 +194,43 @@ const Experience = () => {
             </motion.div>
 
             {/* Timeline */}
-            <div className="relative ml-[15px] md:ml-[110px] flex flex-col gap-10">
-              {/* Vertical Line */}
+            <div ref={timelineRef} className="relative ml-[15px] md:ml-[110px] flex flex-col gap-10">
+              {/* Static background line (faint) */}
               <div
                 className="absolute left-[6px] top-3 bottom-5 w-[1px]"
-                style={{ backgroundColor: "rgba(143, 0, 13, 0.3)" }}
+                style={{ backgroundColor: "rgba(143, 0, 13, 0.1)" }}
               ></div>
+
+              {/* Animated line that draws on scroll */}
+              <motion.div
+                className="absolute left-[6px] top-3 w-[1px] origin-top"
+                style={{
+                  height: lineHeight,
+                  backgroundColor: "#8F000D",
+                  boxShadow: "0 0 8px rgba(143, 0, 13, 0.4)",
+                }}
+              />
 
               {experiences.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   className="relative flex items-start group"
                 >
-                  {/* Square Node */}
-                  <div
-                    className="absolute left-0 mt-[6px] w-[13px] h-[13px] z-10 bg-[#F8F8EB]"
-                    style={{
-                      border: `2px solid #8F000D`,
-                      backgroundColor: index === 0 ? '#8F000D' : '#F8F8EB',
-                    }}
-                  ></div>
+                  {/* Animated Timeline Node */}
+                  <TimelineNode index={index} />
 
                   {/* Content */}
-                  <div className="ml-10 w-full pr-4">
+                  <motion.div
+                    className="ml-10 w-full pr-4"
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                    viewport={{ once: true }}
+                  >
                     <span className="font-got text-[#8F000D] block mb-1.5" style={{ fontSize: "11px", letterSpacing: "0.15em" }}>
                       {item.date}
                     </span>
@@ -165,13 +243,20 @@ const Experience = () => {
                     {item.points && item.points.length > 0 && (
                       <ul className="list-disc pl-4 space-y-2">
                         {item.points.map((point, i) => (
-                          <li key={i} className="text-[#8e8d83] text-[13.5px] leading-[1.6]">
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 + 0.3 + i * 0.05 }}
+                            viewport={{ once: true }}
+                            className="text-[#8e8d83] text-[13.5px] leading-[1.6]"
+                          >
                             {point}
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     )}
-                  </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -184,3 +269,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

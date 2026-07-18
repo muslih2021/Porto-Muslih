@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { redlogo } from "../../assets";
 import { FaJava } from "react-icons/fa6";
 import {
@@ -58,17 +59,40 @@ const techStack = [
 ];
 
 const About = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const sectionInView = useInView(sectionRef, { once: true, amount: 0.15 });
+
   return (
-    <section id="about" className="relative w-full min-h-screen bg-[#8F000D] pt-16 pb-20 md:pb-0 overflow-hidden flex items-center justify-center">
+    <section ref={sectionRef} id="about" className="relative w-full min-h-screen bg-[#8F000D] py-16   overflow-hidden flex items-center justify-center">
 
       {/* Naga Targaryen Putih dengan Opacity Rendah di Kiri Bawah/Tengah */}
-      <div className="absolute left-[-5%] bottom-[5%] w-[55%] md:w-[42%] max-w-[620px] aspect-square pointer-events-none z-0">
+      <motion.div
+        className="absolute left-[-5%] bottom-[5%] w-[55%] md:w-[42%] max-w-[620px] aspect-square pointer-events-none z-0"
+        initial={{
+          clipPath: "circle(0% at 50% 50%)",
+          opacity: 0,
+          scale: 0.8,
+          rotate: -15,
+        }}
+        animate={sectionInView ? {
+          clipPath: "circle(75% at 50% 50%)",
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+        } : {}}
+        transition={{
+          clipPath: { duration: 1.4, ease: [0.22, 1, 0.36, 1] },
+          opacity: { duration: 0.8 },
+          scale: { duration: 1.2, ease: "easeOut" },
+          rotate: { duration: 1.2, ease: "easeOut" },
+        }}
+      >
         <img
           src={redlogo}
           alt="Targaryen Sigil Background"
           className="w-full h-full object-contain filter brightness-0 invert opacity-[0.12]"
         />
-      </div>
+      </motion.div>
 
       {/* Angka Raksasa 02 Dekoratif di Kanan Bawah */}
       <div className="absolute -bottom-20 font-black right-12 text-[24vw] md:text-[28vw] font-brush text-[#F2E6E6]/[0.13] select-none pointer-events-none z-0 leading-none">
@@ -96,16 +120,64 @@ const About = () => {
         {/* Kolom Kanan: Biografi & Toolkit */}
         <div className="md:col-span-7 flex flex-col justify-start text-white">
           {/* Paragraf Deskripsi */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          {/* Paragraf Deskripsi - Staggered sentence entrance */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.25,
+                  delayChildren: 0.1,
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
             className="leading-[1.8] font-light text-white/95 max-w-2xl text-justify"
             style={{ fontSize: "clamp(14px, 1.5vw, 18px)" }}
           >
-            I am an Information Systems Fresh Graduate from <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Hasanuddin University</strong> with a <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>GPA of 3.65/4.00</strong>, specializing as an <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Information Systems Specialist</strong>, <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Full Stack Developer</strong>, and <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Entry-Level Data Analyst</strong>. I possess expertise in UI/UX design using Figma and web development with React.js, Express.js, and Laravel. Additionally, I am skilled in end-to-end data analytics, from scraping and validation to delivering interactive dashboards using Power BI, Excel, Python (Pandas), and SQL. Backed by experience as a <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Web Programming Laboratory Assistant</strong> and direct collaboration with <strong className="font-bold text-white" style={{fontSize:"1.2em"}}>Japanese teams</strong>, I have developed high discipline, precision, and cross-cultural professionalism.
-          </motion.p>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+              }}
+              className="inline"
+            >
+              I am an Information Systems Fresh Graduate from <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Hasanuddin University</strong> with a <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>GPA of 3.65/4.00</strong>, specializing as an <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Information Systems Specialist</strong>, <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Full Stack Developer</strong>, and <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Entry-Level Data Analyst</strong>.{" "}
+            </motion.span>
+            
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+              }}
+              className="inline"
+            >
+              I possess expertise in UI/UX design using Figma and web development with React.js, Express.js, and Laravel.{" "}
+            </motion.span>
+
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+              }}
+              className="inline"
+            >
+              Additionally, I am skilled in end-to-end data analytics, from scraping and validation to delivering interactive dashboards using Power BI, Excel, Python (Pandas), and SQL.{" "}
+            </motion.span>
+
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+              }}
+              className="inline"
+            >
+              Backed by experience as a <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Web Programming Laboratory Assistant</strong> and direct collaboration with <strong className="font-bold text-white" style={{ fontSize: "1.2em" }}>Japanese teams</strong>, I have developed high discipline, precision, and cross-cultural professionalism.
+            </motion.span>
+          </motion.div>
 
           {/* Garis Horizontal Pemisah */}
           <motion.div
@@ -120,52 +192,100 @@ const About = () => {
           <div className="grid grid-cols-2 gap-6 md:gap-8">
 
             {/* Sub-Kolom 1: Creative Toolkit */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <h4 className="text-[11px] md:text-[13px] font-semibold tracking-[0.12em] text-white/60 uppercase mb-4 font-mono">
+            <div className="flex flex-col">
+              <motion.h4 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-[11px] md:text-[13px] font-semibold tracking-[0.12em] text-white/60 uppercase mb-4 font-mono"
+              >
                 CREATIVE TOOLKIT
-              </h4>
-              <div className="flex flex-wrap gap-3 md:gap-5">
+              </motion.h4>
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1,
+                      delayChildren: 0.5,
+                    }
+                  }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3 md:gap-5"
+              >
                 {creativeToolkit.map((item) => (
-                  <div key={item.name} className="flex flex-col items-center" style={{ width: "clamp(52px, 8vw, 75px)" }}>
+                  <motion.div 
+                    key={item.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                    }}
+                    className="flex flex-col items-center" 
+                    style={{ width: "clamp(52px, 8vw, 75px)" }}
+                  >
                     <div className="cursor-pointer bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 hover:-translate-y-1" style={{ width: "clamp(40px, 6vw, 56px)", height: "clamp(40px, 6vw, 56px)" }}>
                       <item.icon style={{ color: item.color, fontSize: "clamp(18px, 3vw, 28px)" }} />
                     </div>
                     <span className="text-white/80 mt-2 text-center leading-tight" style={{ fontSize: "clamp(9px, 1.1vw, 12px)" }}>
                       {item.name}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Sub-Kolom 2: Tech Stack */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              <h4 className="text-[11px] md:text-[13px] font-semibold tracking-[0.12em] text-white/60 uppercase mb-4 font-mono">
+            <div className="flex flex-col">
+              <motion.h4 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-[11px] md:text-[13px] font-semibold tracking-[0.12em] text-white/60 uppercase mb-4 font-mono"
+              >
                 TECH STACK
-              </h4>
-              <div className="flex flex-wrap gap-3 md:gap-5">
+              </motion.h4>
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.08,
+                      delayChildren: 0.6,
+                    }
+                  }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3 md:gap-5"
+              >
                 {techStack.map((item) => (
-                  <div key={item.name} className="flex flex-col items-center" style={{ width: "clamp(52px, 8vw, 75px)" }}>
+                  <motion.div 
+                    key={item.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                    }}
+                    className="flex flex-col items-center" 
+                    style={{ width: "clamp(52px, 8vw, 75px)" }}
+                  >
                     <div className="cursor-pointer bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 hover:-translate-y-1" style={{ width: "clamp(40px, 6vw, 56px)", height: "clamp(40px, 6vw, 56px)" }}>
                       <item.icon style={{ color: item.color, fontSize: "clamp(18px, 3vw, 28px)" }} />
                     </div>
                     <span className="text-white/80 mt-2 text-center leading-tight" style={{ fontSize: "clamp(9px, 1.1vw, 12px)" }}>
                       {item.name}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
           </div>
 
