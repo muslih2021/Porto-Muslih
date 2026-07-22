@@ -235,10 +235,10 @@ const Experience = () => {
                       {item.date}
                     </span>
                     <h3 className="text-[#3A3A31] font-semibold text-[19px] md:text-[21px] mb-1">
-                      {item.companyName}
+                      {item.title}
                     </h3>
                     <p className="text-[#7D7B6C] text-[15px] font-medium mb-3">
-                      {item.title}
+                      {item.companyName}
                     </p>
                     {item.points && item.points.length > 0 && (
                       <ul className="list-disc pl-4 space-y-2">

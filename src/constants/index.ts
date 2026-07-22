@@ -148,30 +148,8 @@ const technologies: TTechnology[] = [
 
 const experiences: TExperience[] = [
   {
-    title: "Java Developer",
-    companyName: "Windows Rental System",
-    icon: placeholderIcon,
-    iconBg: "#E6DEDD",
-    date: "2021",
-    points: [
-      "Developed a desktop-based Java application for managing sports field rentals such as soccer, volleyball, and others.",
-      "Included features like booking management, transaction reports, and inventory tracking.",
-    ],
-  },
-  {
-    title: "Laravel Developer",
-    companyName: "Ratu Boga Digital System",
-    icon: placeholderIcon,
-    iconBg: "#383E56",
-    date: "Jan - Jun 2022",
-    points: [
-      "Built a digital restaurant system using Laravel for food ordering and sales management.",
-      "Implemented dynamic menus, transaction workflows, and multi-level user access.",
-    ],
-  },
-  {
-    title: "Web Designer & Developer",
-    companyName: "Faculty of Pharmacy – Hasanuddin University",
+    title: "PT NPE Digital",
+    companyName: "Web Designer & Developer | Faculty of Pharmacy – Hasanuddin University",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
     date: "Jul - Dec 2022",
@@ -181,19 +159,33 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Web Developer",
-    companyName: "Mathematics Student Association – Hasanuddin University",
+    title: "Himatika Hasanuddin University",
+    companyName: "Web Developer & Publication-Documentation Team | Mathematics Student Association",
     icon: placeholderIcon,
     iconBg: "#383E56",
     date: "Early 2023",
     points: [
-      "Developed a Laravel-based website for the student organization.",
-      "Provided features such as news management, event scheduling, and documentation.",
+      "Developed a Laravel-based website and designed the organization's database system.",
+      "Provided web features such as news management, event scheduling, and documentation.",
+      "Served as Coordinator of Publication and Documentation for the Leadership Training Program.",
+      "Acted as Publication and Documentation Staff for Mathematics Event (a South Sulawesi-wide Olympiad) and for two student regeneration/onboarding programs.",
     ],
   },
   {
-    title: "Android Developer & ML Collaborator",
-    companyName: "Automated Inventory Prediction System",
+    title: "Web Programming Laboratory – Hasanuddin University",
+    companyName: "Lab Teaching Assistant",
+    icon: placeholderIcon,
+    iconBg: "#383E56",
+    date: "Nov 2023 - Jul 2024",
+    points: [
+      "Guided students in understanding basic to advanced web programming concepts clearly and structured for diverse learning backgrounds.",
+      "Provided practical assistance on HTML, CSS, Bootstrap, JavaScript, PHP, Laravel, and framework introductions.",
+      "Assisted lecturers in preparing syllabus materials, evaluation tasks, grading assignments, and troubleshooting technical issues during lab sessions.",
+    ],
+  },
+  {
+    title: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+    companyName: "Android Developer & ML Collaborator | Automated Inventory Prediction System",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
     date: "Mid 2023",
@@ -203,72 +195,51 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: "Web Developer",
-    companyName: "Citta Tourism Village Website",
-    icon: placeholderIcon,
-    iconBg: "#383E56",
-    date: "Early 2024",
-    points: [
-      "Created a tourism website for Citta Village to promote local destinations and culture.",
-      "Built an admin dashboard with responsive design for public access.",
-    ],
-  },
-  {
-    title: "Web Developer & Video Editor",
-    companyName: "Digital Village Platform & A-Wing Group",
+    title: "PT Awinna Sinergi Internasional",
+    companyName: "Web Developer & Video Editor",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
     date: "Mid 2025",
     points: [
-      "Developing a digital village government platform to support rural communities in Maluku.",
-      "Edited corporate and event videos using Adobe After Effects, focusing on brand-aligned visuals and professional animation for client promotion.",
-      "Produced a cultural documentary on Citta Village (Soppeng, Central Maluku).",
+      "Responsible for company website maintenance by collaborating closely with the team.",
+      "Responsible for the production of various types of videos, including company profiles, business promotional videos, and internal as well as external event documentations.",
+      "Collaborated with the Japanese team in a disciplined and structured work environment, adapting communication and visual standards to Japanese professional culture.",
+      "Utilized Adobe After Effects as the primary tool for motion graphics editing, logo animations, visual transitions, and video branding elements.",
+      "Crafted a consistent visual flow aligned with the corporate identity to ensure professional results that meet international market standards.",
     ],
   },
   {
-    title: "Internship Experience – Full Stack Web Developer",
-    companyName: "Telkomsel Regional Sulawesi",
+    title: "Telkomsel Regional Sulawesi",
+    companyName: "Full Stack Web Developer (Internship)",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
     date: "August 4, 2025 – December 5, 2025",
     points: [
       "Developed and maintained The Communal (thecommunal.id) as a digital community platform to support Telkomsel’s business expansion targeting youth and community segments through event collaboration, sponsorship programs, and community engagement initiatives across Sulawesi.",
-
       "Developed Trubers Sulawesi, an internal web application to monitor Trust Builder social media performance, featuring automated scoring, leaderboard generation for incentive distribution, and public data scraping from TikTok and Instagram, built using ReactJS, ExpressJS, JavaScript, and cPanel, and deployed at trubers.id.",
-
       "Built WAJO (WhatsApp Web Automation), a system integrated into The Communal platform to schedule messages, manage broadcasts, and automate WhatsApp communications, enabling communities to deliver messages efficiently without manual sending using React for frontend and ExpressJS for backend.",
-
       "Developed a Face Recognition Gallery System within The Communal website that enables users to automatically find their photos from community event documentation using facial detection, while maintaining user privacy, implemented using Laravel for backend services and Python for facial processing in a two-person development team.",
-
       "Developed an automated WhatsApp Chatbot integrated with WhatsApp Business API to support Direct Sales in handling customer inquiries regarding Telkomsel packages, particularly in high-traffic environments such as airports, with multi-user access and escalation to customer service when needed, built using JavaScript and ExpressJS.",
-
       "Conducted data scraping and analysis of educational institutions in remote and underdeveloped (3T) areas across the Talaud Islands and Sangihe Islands, North Sulawesi, to support digital education expansion, internet coverage planning, and digital inclusion initiatives.",
-
       "Collected, organized, and analyzed contact data and social media accounts of Student Executive Board (BEM) leaders across Sulawesi at both faculty and university levels to support campus activation strategies and strengthen Telkomsel’s brand presence among university students.",
-
       "Participated in online MOM briefings for Direct Sales clusters in Makassar, New Banggai, Talaud, Parigi Moutong, and New Gorontalo, analyzing business performance insights, operational challenges, and IT-related pain points to identify opportunities for improving sales effectiveness and digital system support."
     ],
   },
   {
-    title: "Video Editor",
-    companyName: "Nakamura Culinary School • PT Permodalan Nasional Madani (PNM) • Imare Imedit Japan",
+    title: "Freelance Clients (Nakamura Culinary School  • PT Permodalan Nasional Madani • Imare Imedit Japan)",
+    companyName: "Video Editor & Web Developer",
     icon: placeholderIcon,
     iconBg: "#E6DEDD",
-    date: "Late 2025",
+    date: "Early 2026 - Present",
     points: [
+      "Designed and developed highly responsive portfolio website for an international professional photographer based in Japan to showcase high-resolution visual works.",
       "Edited promotional video content for Nakamura Culinary School to support business expansion into the Indonesian market, focusing on brand positioning, cultural relevance, and clear messaging to introduce the institution to a new international audience.",
-
       "Produced and edited video content for PT Permodalan Nasional Madani (PNM) as part of a women empowerment program, highlighting the impact of entrepreneurship initiatives for housewives through storytelling that emphasizes social value and economic inclusion.",
-
       "Collaborated with Imare Imedit Japan to edit promotional videos for AI-based therapeutic technology, presenting complex technological concepts through clear visuals, structured narratives, and professional motion graphics tailored for a global audience.",
-
       "Edited business and investor-focused promotional videos for A Wing Group to support company expansion, delivering concise, persuasive, and visually polished content aimed at attracting potential investors and strategic partners."
     ],
   }
-
-
 ];
-
 const testimonials: TTestimonial[] = [
   {
     testimonial:
@@ -349,7 +320,7 @@ const projects: TProject[] = [
       { name: "MYSQL", color: "yellow-text-gradient" },
     ],
     image: himatika,
-    sourceCodeLink: "https://himatikafmipaunhas.id/",
+    sourceCodeLink: "https://akademik-himatika-unhas.vercel.app/",
   },
   {
     name: "Citta Village Tourism Website",

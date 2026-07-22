@@ -43,7 +43,8 @@ const BannerCard: React.FC<{ index: number; onDetail: () => void } & TProject> =
 
       {/* ── Absolutely Positioned Contents overlayed on the banner ── */}
       <div
-        className="relative z-10 w-full h-full flex flex-col items-center"
+        onClick={onDetail}
+        className="relative cursor-pointer z-10 w-full h-full flex flex-col items-center"
         style={{ paddingTop: "180px" }}
       >
         {/* Title */}
@@ -230,7 +231,7 @@ const ProjectDetailModal: React.FC<{
                     className="inline-flex items-center gap-2 font-got text-[#8F000D] hover:opacity-70 transition-opacity"
                     style={{ fontSize: "12px", letterSpacing: "0.12em" }}
                   >
-                    VIEW SOURCE / DEMO
+                    VIEW SOURCE
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </a>
                 </div>
@@ -502,7 +503,7 @@ const Works = () => {
               {(() => {
                 const text = roleConfigs[initialRole]?.worksContent ??
                   "A selection of recent projects across web development, data analysis, and video production.";
-                
+
                 // If it contains the long string, split by sentence to animate it sequentially.
                 if (text.includes("These projects highlight")) {
                   return (
